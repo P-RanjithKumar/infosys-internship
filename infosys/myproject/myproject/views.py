@@ -13,6 +13,8 @@ model = load_model('C:\\Users\\ranji\\Desktop\\infosys\\infosys\\bi_rnn_signatur
 import cv2
 import numpy as np
 
+
+
 def preprocess_image(image, img_size=(128, 128), patch_size=(128, 128)):
     # Read the image and convert it to grayscale
     img = cv2.imdecode(np.frombuffer(image.read(), np.uint8), cv2.IMREAD_GRAYSCALE)
@@ -26,6 +28,8 @@ def preprocess_image(image, img_size=(128, 128), patch_size=(128, 128)):
     patches = img_to_patches(img, patch_size)
     return patches
 
+
+
 def img_to_patches(img, patch_size=(128, 128)):
     patches = []
     for i in range(0, img.shape[0], patch_size[0]):
@@ -33,6 +37,8 @@ def img_to_patches(img, patch_size=(128, 128)):
             patch = img[i:i + patch_size[0], j:j + patch_size[1]].flatten()
             patches.append(patch)
     return np.array(patches)
+
+
 
 def predict_signature(model, image):
     # Preprocess the uploaded image to extract patches
@@ -100,5 +106,3 @@ def upload_signature(request):
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
-
-
