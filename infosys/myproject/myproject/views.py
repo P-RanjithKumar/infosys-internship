@@ -49,7 +49,7 @@ def predict_signature(model, image):
     # Make prediction
     prediction = model.predict(input_data)
     
-    return np.argmax(prediction), np.max(prediction)  # Return predicted class and confidence
+    return np.argmax(prediction), np.max(prediction) 
 
 
 
@@ -78,7 +78,7 @@ def registration_view(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return redirect('login')  # Redirect to login page after registration
+            return redirect('login')  
     return render(request, 'registration.html', {'form': form})
 
 
@@ -100,3 +100,5 @@ def upload_signature(request):
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
+
+
