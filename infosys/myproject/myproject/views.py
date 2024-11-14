@@ -9,7 +9,6 @@ import io
 
 # Load your pre-trained model
 model = load_model('C:\\Users\\ranji\\Desktop\\infosys\\infosys\\bi_rnn_signature_verification_model_moretrained.h5')
-
 import cv2
 import numpy as np
 
