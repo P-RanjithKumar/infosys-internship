@@ -1,2 +1,3 @@
 infosys/bi_rnn_signature_verification_model_moretrained.h5
 infosys/bi_rnn_signature_verification_model.h5
+*.h5
